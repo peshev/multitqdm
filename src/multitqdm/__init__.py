@@ -232,6 +232,8 @@ class SimpleProgressBar(ProgressBar):
         self._pb.update(progress)
 
     def complete(self):
-        assert self._pb is not None
-        self._pb.close()
-        self._pb = None
+        if self._pb is not None:
+            self._pb.close()
+            self._pb = None
+        else:
+            pass # complete() being called without start() means we're skipping it

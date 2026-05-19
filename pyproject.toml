@@ -10,7 +10,7 @@ authors = [
 ]
 description = "Thread-safe multi-progress rendering for tqdm"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",

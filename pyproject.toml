@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "multitqdm"
+version = "0.1.0"
+authors = [
+    { name = "Peter Peshev", email = "peshev@gmail.com" },
+]
+description = "Thread-safe multi-progress rendering for tqdm"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = { text = "MIT" }
+dependencies = [
+    "tqdm",
+]
+
+[project.urls]
+Homepage = "https://github.com/peshev/multitqdm"
+Issues = "https://github.com/peshev/multitqdm/issues"

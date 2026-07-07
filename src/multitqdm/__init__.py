@@ -166,11 +166,11 @@ class ProgressBarExecutor:
             buffersize=buffersize
         )
 
-    def shutdown(self, wait=True, *, cancel_futures=False):
+    def shutdown(self, wait=True):
         self.events.join()
         self.events.put(StoppedEvent())
         self.renderer.join()
-        self.executor.shutdown(wait=wait, cancel_futures=cancel_futures)
+        self.executor.shutdown(wait=wait)
 
     def __enter__(self) -> "ProgressBarExecutor":
         result = self.executor.__enter__()
@@ -226,6 +226,7 @@ class SimpleProgressBar(ProgressBar):
     def start(self, *args, **kwargs):
         assert self._pb is None
         self._pb = tqdm(*args, **kwargs)
+        return self
 
     def progress(self, progress: int = 1):
         assert self._pb is not None
